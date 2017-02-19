@@ -1,0 +1,18 @@
+<h1 class="page-title">Sign Up:</h1>
+<%= form_for @user do |f| %>
+  <div class="form-field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="form-field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div><<br>
+  <div class="form-field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div><br>
+  <div class="form-submit">
+    <%= f.submit "register" %>
+  </div>
+<% end %>

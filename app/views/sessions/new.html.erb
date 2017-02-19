@@ -1,0 +1,22 @@
+<h1 class="page-title">Login:</h1>
+<% if @errors %>
+  Error in login:
+  <ul class="form-errors">
+    <% @errors.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for :session, url: sessions_path do |f| %>
+  <div class="form-field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div><br>
+  <div class="form-field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div><br>
+  <div class="form-submit">
+    <%= f.submit "login" %>
+  </div>
+<% end %>

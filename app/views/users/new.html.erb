@@ -1,4 +1,12 @@
 <h1 class="page-title">Sign Up:</h1>
+<% if @errors %>
+  Error in registering account:
+  <ul class="errors">
+    <% @errors.each do |error| %>
+      <li><%= @error %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_for @user do |f| %>
   <div class="form-field">
     <%= f.label :name %><br>
@@ -7,7 +15,7 @@
   <div class="form-field">
     <%= f.label :email %><br>
     <%= f.email_field :email %>
-  </div><<br>
+  </div><br>
   <div class="form-field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>

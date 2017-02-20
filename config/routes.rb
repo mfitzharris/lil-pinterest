@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
 
+  get '/boards/new' => 'boards#new'
+  post '/boards' => 'boards#create'
+  get '/boards/:id' => 'boards#show', as: 'board'
+
 end

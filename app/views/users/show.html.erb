@@ -1,2 +1,9 @@
 <h1 class="page-title"><%= @user.name %></h1>
-pins to go here
+<div class="user-boards">
+  <ul>
+    <li> <%= link_to 'create a new board',boards_new_path %></li>
+    <% @user.boards.each do |board| %>
+      <li><%= board.name %></li>
+    <% end %>
+  </ul>
+</div>

@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   get '/pins/new' => 'pins#new'
   post '/pins' => 'pins#create'
-  get '/pins/:id' => 'pins#show', as 'pin'
+  get '/pins/:id' => 'pins#show', as: 'pin'
 
 end

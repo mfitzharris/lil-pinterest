@@ -1,6 +1,6 @@
 <ul>
-  <li><%= link_to "add a new pin", pins_new_path %></li>
+  <li class="pin pin-ad"><%= link_to "add a new pin", pins_new_path %></li>
   <% @pins.each do |pin| %>
-    <li><%= pin.name %><br><%= image_tag pin.image %><br><%= link_to "pin_this", board_pins_path(id: pin.id) %> </li>
+    <li class="pin"><%= pin.name %><br><%= image_tag pin.image(:small) %><br><%= link_to "pin_this", board_pins_path(id: pin.id) %> </li>
   <% end %>
 </ul>

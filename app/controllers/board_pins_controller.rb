@@ -1,7 +1,11 @@
 class BoardPinsController < ApplicationController
   def new
-    @board_pin = BoardPin.new
-    @pin = Pin.find(params[:id])
+    if session[:user_id] == nil
+      redirect_to '/'
+    else
+      @board_pin = BoardPin.new
+      @pin = Pin.find(params[:id])
+    end
   end
 
   def create

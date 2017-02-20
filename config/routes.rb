@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   post '/boards' => 'boards#create'
   get '/boards/:id' => 'boards#show', as: 'board'
 
+  get '/pins/new' => 'pins#new'
+  post '/pins' => 'pins#create'
+  get '/pins/:id' => 'pins#show', as 'pin'
+
 end

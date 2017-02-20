@@ -1,4 +1,8 @@
 class PinsController < ApplicationController
+  def index
+    @pins = Pin.all.reverse
+  end
+
   def new
     @pin = Pin.new
   end

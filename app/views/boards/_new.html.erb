@@ -1,0 +1,17 @@
+<% if @errors %>
+  Error in new board creation:
+  <ul class="form-errors">
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @board do |f| %>
+  <div class="form-field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="form-submit">
+    <%= f.submit "create board" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1 class="page-title">Save pin:</h1>
+<%= image_tag @pin.image(:thumb) %>
+
+<%= form_for :board_pin, url: board_pins_post_path do |f| %>
+  <div class="form-field">
+    <%= label_tag :board %><br>
+    <%= collection_select(:board, :id, current_user.boards.all, :id, :name)%>
+  </div><br>
+  <%= hidden_field_tag 'pin_id', @pin.id %>
+  <div class="form-submit">
+    <%= f.submit "Add pin" %>
+  </div>
+<% end %>

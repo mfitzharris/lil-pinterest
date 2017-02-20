@@ -1,0 +1,25 @@
+<h1 class="page-title">Add a new pin</h1>
+<%= form_for @pin, multipart: true do |f| %>
+  <div class="form-field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div><br>
+
+  <div class="form-field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div class="form-field">
+    <%= label_tag :source %><br>
+    <%= f.text_field :source %>
+  </div><br>
+
+  <div class="form-field">
+    <%= label_tag :board %><br>
+    <%= collection_select(:board, :id, current_user.boards.all, :id, :name)%>
+  </div><br>
+  <div class="form-submit">
+    <%= f.submit "Add pin" %>
+  </div>
+<% end %>

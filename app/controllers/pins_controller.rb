@@ -4,7 +4,11 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new
+    if session[:user_id] == nil
+      redirect_to '/'
+    else
+      @pin = Pin.new
+    end
   end
 
   def create
